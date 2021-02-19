@@ -1,0 +1,24 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+cmsName: sanity
+buildCommand: npm run build
+publishDir: public
+import:
+  type: sanity
+  contentFile: sanity-export/export.json
+  sanityStudioPath: studio
+  deployStudio: true
+  deployGraphql: true
+  projectIdEnvVar: SANITY_PROJECT_ID
+  datasetEnvVar: SANITY_DATASET
+  tokenEnvVar: SANITY_TOKEN
+models:
+  page:
+    type: page
+    urlPath: '/{slug}'
+  post:
+    type: page
+    urlPath: '/blog/{slug}'
+  advanced:
+    type: page
+    urlPath: '/{slug}'
